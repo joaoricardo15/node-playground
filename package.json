@@ -1,0 +1,14 @@
+{
+  "name": "node-boilerplate",
+  "version": "1.0.0",
+  "description": "NodeJS boilerplate for generic applications",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "João Ricardo Cardoso",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
