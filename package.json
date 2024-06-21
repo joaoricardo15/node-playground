@@ -4,7 +4,7 @@
   "description": "NodeJS boilerplate for generic applications",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --watchAll"
   },
   "author": "João Ricardo Cardoso",
   "license": "ISC",
