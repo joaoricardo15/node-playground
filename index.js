@@ -1,7 +1,8 @@
-const isTrue = () => {
-    console.log('running isTrue...')
-    
+const getTrue = () => {
+    console.log('running getTrue...')
     return true
 }
 
-module.exports = isTrue
+module.exports = {
+    getTrue
+}
