@@ -1,6 +1,6 @@
-const { getTrue } = require('../index')
+const { getTrue } = require('./index')
 
-describe('Index', () => {
+describe('index', () => {
     test('getTrue', () => {
         expect(getTrue()).toBe(true)
     })
