@@ -33,7 +33,7 @@ const romanCharsMap = {
  * @param {string} s
  * @return {number}
  */
-var romanToInt = (s) => {
+const romanToInt = (s) => {
     // Implementing constrainsts
     if (
         typeof s !== 'string' || 
