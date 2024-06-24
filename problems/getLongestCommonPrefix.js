@@ -10,7 +10,7 @@
  */
 const getLongestCommonPrefix = (a) => {
     if (!a || typeof a[0] !== 'string') {
-        return null
+        return
     }
 
     let prefix = a[0]
