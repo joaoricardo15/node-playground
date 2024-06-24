@@ -1,8 +1,8 @@
 const romanToInt = require("./romanToInt")
 
 describe('romanToInteger', () => {
-    test('isInputValid', () => {
-        const invalidResponse = null
+    test('should return undefined for invalid input', () => {
+        const invalidResponse = undefined
         expect(romanToInt(null)).toBe(invalidResponse)
         expect(romanToInt(undefined)).toBe(invalidResponse)
         expect(romanToInt(1)).toBe(invalidResponse)
@@ -14,7 +14,7 @@ describe('romanToInteger', () => {
         expect(romanToInt('XIXIXIXIXIXIXIXI')).toBe(invalidResponse)
     })
     
-    test('isSingleCharCorrect', () => {
+    test('should return corresponding single roman symbol when input corresponds to one single roman symbol', () => {
         expect(romanToInt('I')).toBe(1)
         expect(romanToInt('V')).toBe(5)
         expect(romanToInt('X')).toBe(10)
@@ -24,7 +24,7 @@ describe('romanToInteger', () => {
         expect(romanToInt('M')).toBe(1000)
     })
 
-    test('isAscendingSequenceCorrect', () => {
+    test('should return corresponding single roman symbol when input corresponds to only descending roman symbols', () => {
         expect(romanToInt('II')).toBe(2)
         expect(romanToInt('III')).toBe(3)
         expect(romanToInt('VI')).toBe(6)
@@ -40,13 +40,13 @@ describe('romanToInteger', () => {
         expect(romanToInt('XX')).toBe(20)
     })
 
-    test('isDescendingSequenceCorrect', () => {
+    test('should return corresponding single roman symbol when input corresponds to only ascending roman symbols', () => {
         expect(romanToInt('IV')).toBe(4)
         expect(romanToInt('IX')).toBe(9)
         expect(romanToInt('IXX')).toBe(19)
     })
 
-    test('isMultipleSequenceCorrect', () => {
+    test('should return corresponding single roman symbol when input corresponds to both descending and ascending roman symbols', () => {
         expect(romanToInt('XIV')).toBe(14)
     })
 })

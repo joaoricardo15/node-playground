@@ -41,7 +41,7 @@ const romanToInt = (s) => {
         s.length > 15 || 
         s.split('').some(char => !Object.keys(romanCharsMap).includes(char))
     ) {
-        return null
+        return
     }
 
     // Proper logic
