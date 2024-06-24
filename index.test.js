@@ -1,11 +1,14 @@
-const getDouble = require('./index')
+const sum = require('./index')
 
-describe('getDouble', () => {
-    test('isInputValid', () => {
-        expect(getDouble()).toBe(null)
+describe('sum', () => {
+    test('should not return undefined for invalid input', () => {
+        const invalidResponse = undefined
+        expect(sum()).toBe(invalidResponse)
+        expect(sum(1, undefined)).toBe(invalidResponse)
+        expect(sum(undefined, 1)).toBe(invalidResponse)
     })
 
-    test('isOutpuValid', () => {
-        expect(getDouble(1)).toBe(2)
+    test('should return sum of two number', () => {
+        expect(sum(1, 2)).toBe(3)
     })
 })

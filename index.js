@@ -1,15 +1,16 @@
 /**
  * 
- * @param {number} n 
+ * @param {number} a
+ * @param {number} b 
  * @returns {number}
  */
 
-const getDouble = (n) => {
-    if (typeof n !== 'number') {
-        return null
+const sum = (a, b) => {
+    if (typeof a !== 'number' || typeof b !== 'number') {
+        return
     }
 
-    return 2*n
+    return a + b
 }
 
-module.exports = getDouble
+module.exports = sum
