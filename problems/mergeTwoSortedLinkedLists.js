@@ -15,7 +15,7 @@ function ListNode(val, next) {
  * @param {ListNode} list2
  * @return {ListNode}
  */
-const mergeSortedLinkedLists = (list1, list2) => {
+const mergeTwoSortedLinkedLists = (list1, list2) => {
     if (!list1 || !list2) {
         return list1 || list2
     }
@@ -42,7 +42,7 @@ const getLinkedListFromArray = (array) => {
 
 module.exports = {
     ListNode,
-    mergeSortedLinkedLists,
+    mergeSortedLinkedLists: mergeTwoSortedLinkedLists,
     getArrayFromLinkedList,
     getLinkedListFromArray
 }

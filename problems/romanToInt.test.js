@@ -1,4 +1,4 @@
-const romanToInt = require(".")
+const romanToInt = require("./romanToInt")
 
 describe('romanToInteger', () => {
     test('isInputValid', () => {

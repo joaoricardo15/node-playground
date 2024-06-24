@@ -1,4 +1,4 @@
-const getLongestCommonPrefix = require(".")
+const getLongestCommonPrefix = require("./getLongestCommonPrefix")
 
 describe('getLongestCommonPrefix', () => {
     test('isInputValid', () => {
@@ -23,6 +23,4 @@ describe('getLongestCommonPrefix', () => {
     test('multipleStringsNotSharingPrefixes', () => {
         expect(getLongestCommonPrefix(['hello', 'world'])).toBe('')
     })
-
-
 })
