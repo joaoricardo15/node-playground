@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "description": "NodeJS boilerplate for generic applications",
   "main": "index.js",
+  "author": "João Ricardo Cardoso",
+  "license": "ISC",
   "scripts": {
     "test": "jest --watchAll"
   },
-  "author": "João Ricardo Cardoso",
-  "license": "ISC",
+  "jest": {
+    "testPathIgnorePatterns": ["problems"]
+  },
   "devDependencies": {
     "jest": "^29.7.0"
   }
