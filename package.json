@@ -1,7 +1,7 @@
 {
-  "name": "node-boilerplate",
+  "name": "node-playground",
   "version": "1.0.0",
-  "description": "NodeJS boilerplate for generic applications",
+  "description": "NodeJS playground for generic experiments",
   "main": "index.js",
   "author": "João Ricardo Cardoso",
   "license": "ISC",
