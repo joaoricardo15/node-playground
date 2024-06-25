@@ -31,7 +31,7 @@ const romanCharsMap = {
 
 /**
  * @param {string} s
- * @return {number}
+ * @returns {number}
  */
 const romanToInt = (s) => {
     // Implementing constrainsts

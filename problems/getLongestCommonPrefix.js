@@ -6,7 +6,7 @@
 
 /**
  * @param {array} a
- * @return {string}
+ * @returns {string}
  */
 const getLongestCommonPrefix = (a) => {
     if (!a || typeof a[0] !== 'string') {

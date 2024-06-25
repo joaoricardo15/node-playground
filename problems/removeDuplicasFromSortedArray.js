@@ -13,7 +13,7 @@
 
 /**
  * @param {array} nums
- * @return {array}
+ * @returns {array}
  */
 
 const removeDuplicatesFromSortedArray = (nums) => {
