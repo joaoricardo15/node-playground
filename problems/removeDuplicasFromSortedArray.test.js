@@ -2,12 +2,11 @@ const removeDuplicatesFromSortedArray = require("./removeDuplicasFromSortedArray
 
 describe('removeDuplicatesFromSortedArray', () => {
     test('should return undefined for invalid input', () => {
-        const invalidResponse = undefined
-        expect(removeDuplicatesFromSortedArray()).toBe(invalidResponse)
-        expect(removeDuplicatesFromSortedArray({})).toBe(invalidResponse)
-        expect(removeDuplicatesFromSortedArray(null)).toBe(invalidResponse)
-        expect(removeDuplicatesFromSortedArray('array')).toBe(invalidResponse)
-        expect(removeDuplicatesFromSortedArray(100000)).toBe(invalidResponse)
+        expect(removeDuplicatesFromSortedArray()).toBe()
+        expect(removeDuplicatesFromSortedArray({})).toBe()
+        expect(removeDuplicatesFromSortedArray(null)).toBe()
+        expect(removeDuplicatesFromSortedArray('array')).toBe()
+        expect(removeDuplicatesFromSortedArray(100000)).toBe()
     })
 
     test('should return input length when input has no duplicates', () => {

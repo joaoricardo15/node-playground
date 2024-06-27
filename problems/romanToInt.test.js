@@ -2,16 +2,15 @@ const romanToInt = require("./romanToInt")
 
 describe('romanToInteger', () => {
     test('should return undefined for invalid input', () => {
-        const invalidResponse = undefined
-        expect(romanToInt(null)).toBe(invalidResponse)
-        expect(romanToInt(undefined)).toBe(invalidResponse)
-        expect(romanToInt(1)).toBe(invalidResponse)
-        expect(romanToInt({})).toBe(invalidResponse)
-        expect(romanToInt(true)).toBe(invalidResponse)
-        expect(romanToInt('')).toBe(invalidResponse)
-        expect(romanToInt('s')).toBe(invalidResponse)
-        expect(romanToInt('XXs')).toBe(invalidResponse)
-        expect(romanToInt('XIXIXIXIXIXIXIXI')).toBe(invalidResponse)
+        expect(romanToInt(null)).toBe()
+        expect(romanToInt(undefined)).toBe()
+        expect(romanToInt(1)).toBe()
+        expect(romanToInt({})).toBe()
+        expect(romanToInt(true)).toBe()
+        expect(romanToInt('')).toBe()
+        expect(romanToInt('s')).toBe()
+        expect(romanToInt('XXs')).toBe()
+        expect(romanToInt('XIXIXIXIXIXIXIXI')).toBe()
     })
     
     test('should return corresponding single roman symbol when input corresponds to one single roman symbol', () => {

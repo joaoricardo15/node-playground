@@ -2,13 +2,12 @@ const getLongestCommonPrefix = require("./getLongestCommonPrefix")
 
 describe('getLongestCommonPrefix', () => {
     test('should return undefined for invalid input', () => {
-        const invalidResponse = undefined
-        expect(getLongestCommonPrefix()).toBe(invalidResponse)
-        expect(getLongestCommonPrefix(null)).toBe(invalidResponse)
-        expect(getLongestCommonPrefix('')).toBe(invalidResponse)
-        expect(getLongestCommonPrefix(0)).toBe(invalidResponse)
-        expect(getLongestCommonPrefix({})).toBe(invalidResponse)
-        expect(getLongestCommonPrefix([])).toBe(invalidResponse)
+        expect(getLongestCommonPrefix()).toBe()
+        expect(getLongestCommonPrefix(null)).toBe()
+        expect(getLongestCommonPrefix('')).toBe()
+        expect(getLongestCommonPrefix(0)).toBe()
+        expect(getLongestCommonPrefix({})).toBe()
+        expect(getLongestCommonPrefix([])).toBe()
     })
 
     test('should return string for a single string array', () => {

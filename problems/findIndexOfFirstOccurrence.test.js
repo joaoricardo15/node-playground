@@ -2,11 +2,10 @@ const findIndexOfFirstOccurrence = require("./findIndexOfFirstOccurrence")
 
 describe('findIndexOfFirstOccurrence', () => {
     test('should return undefined for invalid inout', () => {
-        const invalidResponse = undefined
-        expect(findIndexOfFirstOccurrence()).toBe(invalidResponse)
-        expect(findIndexOfFirstOccurrence('', '')).toBe(invalidResponse)
-        expect(findIndexOfFirstOccurrence('', undefined)).toBe(invalidResponse)
-        expect(findIndexOfFirstOccurrence(undefined, '')).toBe(invalidResponse)
+        expect(findIndexOfFirstOccurrence()).toBe()
+        expect(findIndexOfFirstOccurrence('', '')).toBe()
+        expect(findIndexOfFirstOccurrence('', undefined)).toBe()
+        expect(findIndexOfFirstOccurrence(undefined, '')).toBe()
     })
 
     test('should return -1 when needle is not present in haystack', () => {

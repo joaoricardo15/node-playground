@@ -13,12 +13,11 @@ describe('isPalindrome', () => {
 
 describe('getLongestPalindromicSubstring', () => {
     test('should return undefined for invalid input', () => {
-        const invalidResponse = undefined
-        expect(getLongestPalindromicSubstring()).toBe(invalidResponse)
-        expect(getLongestPalindromicSubstring(0)).toBe(invalidResponse)
-        expect(getLongestPalindromicSubstring([])).toBe(invalidResponse)
-        expect(getLongestPalindromicSubstring({})).toBe(invalidResponse)
-        expect(getLongestPalindromicSubstring('')).toBe(invalidResponse)
+        expect(getLongestPalindromicSubstring()).toBe()
+        expect(getLongestPalindromicSubstring(0)).toBe()
+        expect(getLongestPalindromicSubstring([])).toBe()
+        expect(getLongestPalindromicSubstring({})).toBe()
+        expect(getLongestPalindromicSubstring('')).toBe()
     })
 
     test('should return same string when input is a palindrome', () => {

@@ -16,13 +16,13 @@ describe('getLinkedListFromArray', () => {
 
 describe('mergeSortedLists', () => {
     test('should return undefined for invalid input', () => {
-        expect(mergeSortedLinkedLists()).toBe(undefined)
+        expect(mergeSortedLinkedLists()).toBe()
     })
    
     const emptyNode = new ListNode()
 
     test('should return empty node when input is a single empty node', () => {
-        expect(mergeSortedLinkedLists()).toBe(undefined)
+        expect(mergeSortedLinkedLists()).toBe()
         expect(mergeSortedLinkedLists(emptyNode, undefined)).toBe(emptyNode)
         expect(mergeSortedLinkedLists(undefined, emptyNode)).toBe(emptyNode)
     })
