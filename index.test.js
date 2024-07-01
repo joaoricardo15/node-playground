@@ -1,4 +1,4 @@
-const sum = require('./index')
+const sum = require('.')
 
 describe('sum', () => {
     test('should not return undefined for invalid input', () => {
