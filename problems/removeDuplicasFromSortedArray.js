@@ -12,8 +12,8 @@
  */
 
 /**
- * @param {array} nums
- * @returns {array}
+ * @param {number[]} nums
+ * @returns {number[]}
  */
 
 const removeDuplicatesFromSortedArray = (nums) => {

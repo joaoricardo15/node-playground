@@ -5,7 +5,7 @@
  ***********************************************************/
 
 /**
- * @param {array} a
+ * @param {string[]} a
  * @returns {string}
  */
 const getLongestCommonPrefix = (a) => {
