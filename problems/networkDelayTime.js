@@ -5,6 +5,8 @@
  * @return {number}
  */
 var networkDelayTime = function(times, n, k) {
+    
+    // Dijkstra's algorithm
     const visited = new Set()
     const unvisited = Array.from({ length: n }, (_, i) => i + 1)
     const distances = unvisited.reduce((prev, curr) => ({ ...prev, [curr]: [Infinity, null] }), {})
