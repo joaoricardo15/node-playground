@@ -1,4 +1,4 @@
-const getReverseInteger = require("./getReverseInteger")
+const getReverseInteger = require("../getReverseInteger")
 
 describe('getReverseInteger', () => {
     test('should return undefined for invalid input', () => {

@@ -1,4 +1,4 @@
-const letterCombinations = require('./letterCombinations')
+const letterCombinations = require('../letterCombinations')
 
 describe('letterCombinations', () => {
     test('should return empty array', () => {

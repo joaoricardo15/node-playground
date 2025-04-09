@@ -1,4 +1,4 @@
-const stringToInteger = require("./stringToInteger")
+const stringToInteger = require("../stringToInteger")
 
 describe('stringToInteger', () => {
     test('should return undefined for invalid input', () => {

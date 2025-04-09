@@ -1,4 +1,4 @@
-const ConsistentHashing = require('./consistentHashing')
+const ConsistentHashing = require('../consistentHashing')
 
 describe('consistentHashing', () => {
     test('should not return the correct node if there is only one node', () => {

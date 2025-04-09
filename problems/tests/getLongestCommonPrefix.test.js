@@ -1,4 +1,4 @@
-const getLongestCommonPrefix = require("./getLongestCommonPrefix")
+const getLongestCommonPrefix = require("../getLongestCommonPrefix")
 
 describe('getLongestCommonPrefix', () => {
     test('should return undefined for invalid input', () => {

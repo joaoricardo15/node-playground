@@ -1,4 +1,4 @@
-const sum = require("./tripletsSum")
+const sum = require("../tripletsSum")
 
 describe('sum', () => {
     test('should return test case 1', () => {

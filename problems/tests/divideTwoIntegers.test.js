@@ -1,4 +1,4 @@
-const divideTwoIntegers = require('./divideTwoIntegers')
+const divideTwoIntegers = require('../divideTwoIntegers')
 
 describe('divideTwoIntegers', () => {
     test('should return division of two numbers for test case 1', () => {

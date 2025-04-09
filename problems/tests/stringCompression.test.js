@@ -1,4 +1,4 @@
-const stringCompression = require('./stringCompression')
+const stringCompression = require('../stringCompression')
 
 describe('stringCompression', () => {
     test('should not return empty string for an undefined or empty input', () => {

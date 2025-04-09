@@ -1,4 +1,4 @@
-const generateParenthesis = require('./generateParenthesis')
+const generateParenthesis = require('../generateParenthesis')
 
 describe('generateParenthesis', () => {
     test('should return one valid paranthesis', () => {

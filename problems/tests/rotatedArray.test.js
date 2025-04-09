@@ -1,4 +1,4 @@
-const searchRotatedArray = require("./rotatedArray")
+const searchRotatedArray = require("../rotatedArray")
 
 describe('sum', () => {
     test('should not return test case 1', () => {

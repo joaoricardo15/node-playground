@@ -1,4 +1,4 @@
-const findIndexOfFirstOccurrence = require("./findIndexOfFirstOccurrence")
+const findIndexOfFirstOccurrence = require("../findIndexOfFirstOccurrence")
 
 describe('findIndexOfFirstOccurrence', () => {
     test('should return undefined for invalid inout', () => {

@@ -1,4 +1,4 @@
-const { QuadThree, buildQuadThree} = require('./quadThree')
+const { QuadThree, buildQuadThree} = require('../quadThree')
 
 describe('buildQuadThree', () => {
     test('should return the correct quad three', () => {

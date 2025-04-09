@@ -1,4 +1,4 @@
-const memoize = require("./memoize");
+const memoize = require("../memoize");
 
 describe('memoize', () => {
     test('should execute one input test function only once', () => {

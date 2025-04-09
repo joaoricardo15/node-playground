@@ -1,4 +1,4 @@
-const insertPosition = require('./insertPosition')
+const insertPosition = require('../insertPosition')
 
 describe('sum', () => {
     test('should return correct position. Test case 1', () => {

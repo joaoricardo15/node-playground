@@ -1,4 +1,4 @@
-const romanToInt = require("./romanToInt")
+const romanToInt = require("../romanToInt")
 
 describe('romanToInteger', () => {
     test('should return undefined for invalid input', () => {

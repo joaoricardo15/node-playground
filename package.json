@@ -9,7 +9,7 @@
     "test": "jest --watchAll"
   },
   "jest": {
-    "testPathIgnorePatterns": ["problems"]
+    "testPathIgnorePatterns": ["problems/tests"]
   },
   "devDependencies": {
     "jest": "^29.7.0"

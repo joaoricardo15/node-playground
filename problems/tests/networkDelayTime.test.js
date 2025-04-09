@@ -1,4 +1,4 @@
-const networkDelayTime = require('./networkDelayTime')
+const networkDelayTime = require('../networkDelayTime')
 
 describe('sum', () => {
     test('should return the correct min delay. Test case 1', () => {

@@ -1,4 +1,4 @@
-const removeDuplicatesFromSortedArray = require("./removeDuplicasFromSortedArray")
+const removeDuplicatesFromSortedArray = require("../removeDuplicasFromSortedArray")
 
 describe('removeDuplicatesFromSortedArray', () => {
     test('should return undefined for invalid input', () => {

@@ -1,4 +1,4 @@
-const { getLongestPalindromicSubstring, isPalindrome } = require("./getLongestPalindromicSubstring")
+const { getLongestPalindromicSubstring, isPalindrome } = require("../getLongestPalindromicSubstring")
 
 describe('isPalindrome', () => {
     test('should return false for non palindromic inputs', () => {

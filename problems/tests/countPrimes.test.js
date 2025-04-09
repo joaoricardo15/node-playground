@@ -1,4 +1,4 @@
-const countPrimes = require('./countPrimes')
+const countPrimes = require('../countPrimes')
 
 describe('sum', () => {
     test('should not return the correct amount of prime number small than 0 -> []', () => {
