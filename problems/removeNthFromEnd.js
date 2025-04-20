@@ -5,7 +5,7 @@
 
 function ListNode(val, next) {
     this.val = val
-    this.next = next
+    this.next = next || null
 }
 
 /**
@@ -14,8 +14,6 @@ function ListNode(val, next) {
  * @return {ListNode}
  */
 var removeNthFromEnd = function(head, n) {
-    console.log('head', head)
-
     // Edge case 1
     // If the list has only one node
     if (n === 1 && head.next === null) {
@@ -30,26 +28,20 @@ var removeNthFromEnd = function(head, n) {
     for (let i = 0; i < n; i++) {
         pointer2 = pointer2.next
     }
-
-    console.log('pointer1:', pointer1['val'])
-    console.log('pointer2:', pointer2 && pointer2['val'])
     
     // Move both pointers until the second pointer reaches the end
-    while (pointer2 && pointer2.next !== undefined) {
+    while (pointer2 && pointer2.next !== null) {
         pointer1 = pointer1.next
         pointer2 = pointer2.next
     }
 
-    console.log('pointer1:', pointer1)
-    console.log('pointer2:', pointer2)
-
     // Edge cases
     // If the node to be removed is the end node
     if (pointer1.next === pointer2) {
-        pointer1.next = undefined
+        pointer1.next = null
     }
     // If the node to be removed is the head node
-    else if (pointer2 === undefined) {
+    else if (pointer2 === null) {
         return pointer1.next
     }
     // If the node to be removed is in the middle
