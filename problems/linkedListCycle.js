@@ -1,6 +1,6 @@
 function ListNode(val, next) {
     this.val = val
-    this.next = next
+    this.next = next || null
 }
 
 /**
