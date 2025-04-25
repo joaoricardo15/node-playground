@@ -6,34 +6,48 @@
  */
 
 function ListNode(val, next) {
-    this.val = (val===undefined ? 0 : val)
-    this.next = (next===undefined ? null : next)
+    this.val = val
+    this.next = next || null
 }
 
 /**
- * @param {ListNode} list1
- * @param {ListNode} list2
+ * @param {ListNode} head1
+ * @param {ListNode} head2
  * @returns {ListNode}
  */
-const mergeTwoSortedLinkedLists = (list1, list2) => {
-    if (!list1 || !list2) {
-        return list1 || list2
+const mergeSortedLinkedLists = (head1, head2) => {
+    // Declare a variable to be the head of the merged list
+    let mergedHead
+    if (head1.val <= head2.val) {
+        mergedHead = head1
+        head1 = head1.next
+    } else {
+        mergedHead = head2
+        head2 = head2.next
     }
-
-    const array1 = [], array2 = []
-    getArrayFromLinkedList(list1, array1)
-    getArrayFromLinkedList(list2, array2)
     
-    const mergedArray = array1.concat(array2).sort((a,b) => a - b)
+    // Declare variable to be the current node
+    let currentNode = mergedHead
     
-    return getLinkedListFromArray(mergedArray)
-}
-
-const getArrayFromLinkedList = (list, array) => {
-    array.push(list.val)
-    if (list.next) {
-        getArrayFromLinkedList(list.next, array)
+    // Run until both lists are empty
+    while (head1 && head2) {
+        // Determine with node is smaller and append it to the merged list
+        if (head1.val <= head2.val) {
+            currentNode.next = head1
+            head1 = head1.next
+        } else {
+            currentNode.next = head2
+            head2 = head2.next
+        }
+        
+        currentNode = currentNode.next
     }
+    
+    // Complete the merged list with the eventual remaining of the lists
+    currentNode.next = head1 || head2
+        
+    // Return the merged list
+    return mergedHead
 }
 
 const getLinkedListFromArray = (array) => {
@@ -42,7 +56,6 @@ const getLinkedListFromArray = (array) => {
 
 module.exports = {
     ListNode,
-    mergeSortedLinkedLists: mergeTwoSortedLinkedLists,
-    getArrayFromLinkedList,
+    mergeSortedLinkedLists,
     getLinkedListFromArray
 }

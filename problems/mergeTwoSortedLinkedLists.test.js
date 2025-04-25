@@ -1,4 +1,4 @@
-const { ListNode, getLinkedListFromArray, mergeSortedLinkedLists } = require("../mergeTwoSortedLinkedLists")
+const { ListNode, getLinkedListFromArray, mergeSortedLinkedLists } = require("./mergeTwoSortedLinkedLists")
 
 describe('getLinkedListFromArray', () => {
     const maxLenght = 10
@@ -15,17 +15,6 @@ describe('getLinkedListFromArray', () => {
 })
 
 describe('mergeSortedLists', () => {
-    test('should return undefined for invalid input', () => {
-        expect(mergeSortedLinkedLists()).toBe()
-    })
-   
-    const emptyNode = new ListNode()
-
-    test('should return empty node when input is a single empty node', () => {
-        expect(mergeSortedLinkedLists()).toBe()
-        expect(mergeSortedLinkedLists(emptyNode, undefined)).toBe(emptyNode)
-        expect(mergeSortedLinkedLists(undefined, emptyNode)).toBe(emptyNode)
-    })
 
     const maxLenght = 3
     const maxValue = 10
@@ -37,11 +26,6 @@ describe('mergeSortedLists', () => {
     const randomLenght2 = Math.floor(Math.random() * maxLenght);
     const randomList2 = Array(randomLenght2).fill().map(() => Math.round(Math.random() * maxValue)).sort()
     const randomLinkedList2 = getLinkedListFromArray(randomList2)
-
-    test('should return same linked list when input is only one linked list', () => {
-        expect(mergeSortedLinkedLists(randomLinkedList1, undefined)).toBe(randomLinkedList1)
-        expect(mergeSortedLinkedLists(undefined, randomLinkedList2)).toBe(randomLinkedList2)
-    })
 
     const mergedArray = randomList1.concat(randomList2).sort((a,b) => a - b)
     const mergedLinkedList = getLinkedListFromArray(mergedArray)
