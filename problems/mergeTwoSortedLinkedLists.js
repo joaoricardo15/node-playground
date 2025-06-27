@@ -6,8 +6,8 @@
  */
 
 function ListNode(val, next) {
-    this.val = val
-    this.next = next || null
+  this.val = val;
+  this.next = next || null;
 }
 
 /**
@@ -16,46 +16,48 @@ function ListNode(val, next) {
  * @returns {ListNode}
  */
 const mergeSortedLinkedLists = (head1, head2) => {
-    // Declare a variable to be the head of the merged list
-    let mergedHead
+  // Declare a variable to be the head of the merged list
+  let mergedHead;
+  if (head1.val <= head2.val) {
+    mergedHead = head1;
+    head1 = head1.next;
+  } else {
+    mergedHead = head2;
+    head2 = head2.next;
+  }
+
+  // Declare variable to be the current node
+  let currentNode = mergedHead;
+
+  // Run until both lists are empty
+  while (head1 && head2) {
+    // Determine with node is smaller and append it to the merged list
     if (head1.val <= head2.val) {
-        mergedHead = head1
-        head1 = head1.next
+      currentNode.next = head1;
+      head1 = head1.next;
     } else {
-        mergedHead = head2
-        head2 = head2.next
+      currentNode.next = head2;
+      head2 = head2.next;
     }
-    
-    // Declare variable to be the current node
-    let currentNode = mergedHead
-    
-    // Run until both lists are empty
-    while (head1 && head2) {
-        // Determine with node is smaller and append it to the merged list
-        if (head1.val <= head2.val) {
-            currentNode.next = head1
-            head1 = head1.next
-        } else {
-            currentNode.next = head2
-            head2 = head2.next
-        }
-        
-        currentNode = currentNode.next
-    }
-    
-    // Complete the merged list with the eventual remaining of the lists
-    currentNode.next = head1 || head2
-        
-    // Return the merged list
-    return mergedHead
-}
+
+    currentNode = currentNode.next;
+  }
+
+  // Complete the merged list with the eventual remaining of the lists
+  currentNode.next = head1 || head2;
+
+  // Return the merged list
+  return mergedHead;
+};
 
 const getLinkedListFromArray = (array) => {
-    return array.reverse().reduce((prev, curr) => new ListNode(curr, prev), undefined)
-}
+  return array
+    .reverse()
+    .reduce((prev, curr) => new ListNode(curr, prev), undefined);
+};
 
 module.exports = {
-    ListNode,
-    mergeSortedLinkedLists,
-    getLinkedListFromArray
-}
+  ListNode,
+  mergeSortedLinkedLists,
+  getLinkedListFromArray,
+};

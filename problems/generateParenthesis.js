@@ -6,27 +6,27 @@
  * @param {number} n
  * @return {string[]}
  */
-var generateParenthesis = function(n) {
-    const combinations = []
+var generateParenthesis = function (n) {
+  const combinations = [];
 
-    const addElement = (substring, open, close) => {
-        if (open === n && close === n) {
-            combinations.push(substring)
-            return
-        }
-
-        if (open < n) {
-            addElement(substring + '(', open + 1, close)
-        }
-
-        if (open > close) {
-            addElement(substring + ')', open, close + 1)
-        }
+  const addElement = (substring, open, close) => {
+    if (open === n && close === n) {
+      combinations.push(substring);
+      return;
     }
-    
-    addElement('', 0, 0)
 
-    return combinations
+    if (open < n) {
+      addElement(substring + "(", open + 1, close);
+    }
+
+    if (open > close) {
+      addElement(substring + ")", open, close + 1);
+    }
+  };
+
+  addElement("", 0, 0);
+
+  return combinations;
 };
 
-module.exports = generateParenthesis
+module.exports = generateParenthesis;

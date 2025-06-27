@@ -1,72 +1,72 @@
-const crypto = require('crypto')
+const crypto = require("crypto");
 
 class ConsistentHashing {
-    constructor(nodes) {
-        this.ring = {}
-        this.keys = []
-        this.nodes = []
+  constructor(nodes) {
+    this.ring = {};
+    this.keys = [];
+    this.nodes = [];
 
-        nodes.forEach(node => {
-            this.addNode(node)
-        })
-    }
-    
-    addNode(node) {
-        this.nodes.push(node)
-        const key = this.hash(node)
-        this.keys.push(key)
-        this.ring[key] = node
-        this.keys.sort()
-    }
-    
-    removeNode(node) {
-        const i = this.nodes.indexOf(node)
-        if (i >= 0) this.nodes.splice(i, 1)
+    nodes.forEach((node) => {
+      this.addNode(node);
+    });
+  }
 
-        const key = this.hash(node)
-        delete this.ring[key]
+  addNode(node) {
+    this.nodes.push(node);
+    const key = this.hash(node);
+    this.keys.push(key);
+    this.ring[key] = node;
+    this.keys.sort();
+  }
 
-        const j = this.keys.indexOf(key)
-        if (j >= 0) this.keys.splice(j, 1)
-    }
+  removeNode(node) {
+    const i = this.nodes.indexOf(node);
+    if (i >= 0) this.nodes.splice(i, 1);
 
-    getNode(key) {
-        if (this.nodes.length == 0) return 0
+    const key = this.hash(node);
+    delete this.ring[key];
 
-        const hash = this.hash(key);
-        const pos = this.getNodePosition(hash)
-        return this.ring[this.keys[pos]]
-    }
+    const j = this.keys.indexOf(key);
+    if (j >= 0) this.keys.splice(j, 1);
+  }
 
-    getNodePosition(hash) {
-        let upper = this.nodes.length - 1
-        let lower = 0
-        let mid = 0
+  getNode(key) {
+    if (this.nodes.length == 0) return 0;
 
-        if (upper == 0) return 0
+    const hash = this.hash(key);
+    const pos = this.getNodePosition(hash);
+    return this.ring[this.keys[pos]];
+  }
 
-        while (lower <= upper) {
-            mid = Math.floor((lower + upper) / 2)
+  getNodePosition(hash) {
+    let upper = this.nodes.length - 1;
+    let lower = 0;
+    let mid = 0;
 
-            if (this.keys[mid] > hash) {
-                upper = mid - 1
-            } else if (this.keys[mid] < hash) {
-                lower = mid + 1
-            } else {
-                return mid
-            }
-        }
+    if (upper == 0) return 0;
 
-        if (upper < 0) {
-            upper = this.nodes.length - 1
-        }
+    while (lower <= upper) {
+      mid = Math.floor((lower + upper) / 2);
 
-        return upper
+      if (this.keys[mid] > hash) {
+        upper = mid - 1;
+      } else if (this.keys[mid] < hash) {
+        lower = mid + 1;
+      } else {
+        return mid;
+      }
     }
 
-    hash(str) {
-        return crypto.createHash('sha1').update(str).digest('hex')
+    if (upper < 0) {
+      upper = this.nodes.length - 1;
     }
+
+    return upper;
+  }
+
+  hash(str) {
+    return crypto.createHash("sha1").update(str).digest("hex");
+  }
 }
 
-module.exports = ConsistentHashing
+module.exports = ConsistentHashing;

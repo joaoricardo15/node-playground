@@ -26,7 +26,7 @@ Requirements:
 Note: Using any built-in memoization libraries. 
 */
 
-const memoize = fn => {
+const memoize = (fn) => {
   const inputHistory = {};
 
   return (...input) => {
@@ -39,7 +39,7 @@ const memoize = fn => {
     inputHistory[input] = result;
 
     return result;
-  }
+  };
 };
 
-module.exports = memoize
+module.exports = memoize;

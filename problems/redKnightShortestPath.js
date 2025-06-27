@@ -53,131 +53,129 @@
  */
 
 /**
- * 
- * @param {number} n 
- * @param {number} i_start 
- * @param {number} j_start 
- * @param {number} i_end 
- * @param {number} j_end 
+ *
+ * @param {number} n
+ * @param {number} i_start
+ * @param {number} j_start
+ * @param {number} i_end
+ * @param {number} j_end
  */
-const printShortestPath = (n, i_start, j_start, i_end, j_end) => {    
-    // Edge case
-    const verticalDistance = Math.abs(i_start - i_end)
-    const horizontalDistance = Math.abs(j_start - j_end)
-    if ((verticalDistance === 0 && horizontalDistance % 2 !== 0) || verticalDistance % 2 !== 0) {
-        return console.log('Impossible')
-    }
-    
-    /* Solution will be implemented with the Dijkstra's algorithm */
+const printShortestPath = (n, i_start, j_start, i_end, j_end) => {
+  // Edge case
+  const verticalDistance = Math.abs(i_start - i_end);
+  const horizontalDistance = Math.abs(j_start - j_end);
+  if (
+    (verticalDistance === 0 && horizontalDistance % 2 !== 0) ||
+    verticalDistance % 2 !== 0
+  ) {
+    return console.log("Impossible");
+  }
 
-    // Set to store the already explored nodes
-    const exploredNodes = new Set()
+  /* Solution will be implemented with the Dijkstra's algorithm */
 
-    // Array to store the nodes yet to be explored (a node should always be in the nodes map before added here)
-    const nodesToExplore = [[i_start, j_start]]
-    
-    // Map to determine how to reach a node
-    // { "i,j": [total_moves, move, i_start, j_start] }
-    const nodeMap = new Map()
-    nodeMap.set([i_start, j_start].join(','), [0, null, null, null])
-    
-    while (nodesToExplore.length) {
-        // Sort nodes based on Euclidean distance 
-        nodesToExplore.sort((a, b) => {
-            const distance_a = Math.abs(a[0] - i_end) + Math.abs(a[1] - j_end)
-            const distance_b = Math.abs(b[0] - i_end) + Math.abs(b[1] - j_end)
-            return distance_a - distance_b
-        })
-        // Get closest node from target node
-        const exploringNode = nodesToExplore.shift()
-        const [i_exploring, j_exploring] = exploringNode
-        exploredNodes.add(exploringNode.join(','))
+  // Set to store the already explored nodes
+  const exploredNodes = new Set();
 
-        if (i_exploring === i_end && j_exploring === j_end) {
-            // Reserve algorithm to determine the route
-            const moves = []
-            const findRouteWithBackPropagation = (node, first = false) => {
-                // Retrieve node mapping
-                const [totalMoves, move, i, j] = nodeMap.get(node.join(','))
-                if (first) {
-                    console.log(totalMoves)
-                }
+  // Array to store the nodes yet to be explored (a node should always be in the nodes map before added here)
+  const nodesToExplore = [[i_start, j_start]];
 
-                moves.unshift(move)
-                if (i === i_start && j === j_start) {
-                    return
-                }
-                
-                findRouteWithBackPropagation([i, j])
-            }
-            
-            findRouteWithBackPropagation(exploringNode, true)
+  // Map to determine how to reach a node
+  // { "i,j": [total_moves, move, i_start, j_start] }
+  const nodeMap = new Map();
+  nodeMap.set([i_start, j_start].join(","), [0, null, null, null]);
 
-            return console.log(moves.join(' '))
+  while (nodesToExplore.length) {
+    // Sort nodes based on Euclidean distance
+    nodesToExplore.sort((a, b) => {
+      const distance_a = Math.abs(a[0] - i_end) + Math.abs(a[1] - j_end);
+      const distance_b = Math.abs(b[0] - i_end) + Math.abs(b[1] - j_end);
+      return distance_a - distance_b;
+    });
+    // Get closest node from target node
+    const exploringNode = nodesToExplore.shift();
+    const [i_exploring, j_exploring] = exploringNode;
+    exploredNodes.add(exploringNode.join(","));
+
+    if (i_exploring === i_end && j_exploring === j_end) {
+      // Reserve algorithm to determine the route
+      const moves = [];
+      const findRouteWithBackPropagation = (node, first = false) => {
+        // Retrieve node mapping
+        const [totalMoves, move, i, j] = nodeMap.get(node.join(","));
+        if (first) {
+          console.log(totalMoves);
         }
 
-        // Get all possible positions from the start position
-        const nextNodes = getPossibleNodes(n, i_exploring, j_exploring)
-        // console.log("nextNodes:", nextNodes)
+        moves.unshift(move);
+        if (i === i_start && j === j_start) {
+          return;
+        }
 
-        // Determine the total amount of moves for the next nodes
-        const [totalMovesExploringNode] = nodeMap.get(exploringNode.join(','))
-        const totalMovesToNextNode = totalMovesExploringNode + 1
+        findRouteWithBackPropagation([i, j]);
+      };
 
-        // For each next possible node
-        nextNodes.forEach(nextNode => {
-            const [move_next, i_next, j_next] = nextNode
-            
-            // Register node into nodes map
-            const nextNodeMapping = nodeMap.get([i_next,j_next].join(','))
-            if (!nextNodeMapping || nextNodeMapping[0] > totalMovesToNextNode) {
-                nodeMap.set([i_next,j_next].join(','), [totalMovesToNextNode, move_next, i_exploring, j_exploring])
-            }
+      findRouteWithBackPropagation(exploringNode, true);
 
-            // Add unexplored nodes to the list of nodes to be explored
-            if (!exploredNodes.has([i_next,j_next].join(','))) {
-                nodesToExplore.push([i_next,j_next])
-            }
-        })
-        
+      return console.log(moves.join(" "));
     }
 
-    console.log('Impossible')
-}
+    // Get all possible positions from the start position
+    const nextNodes = getPossibleNodes(n, i_exploring, j_exploring);
+    // console.log("nextNodes:", nextNodes)
+
+    // Determine the total amount of moves for the next nodes
+    const [totalMovesExploringNode] = nodeMap.get(exploringNode.join(","));
+    const totalMovesToNextNode = totalMovesExploringNode + 1;
+
+    // For each next possible node
+    nextNodes.forEach((nextNode) => {
+      const [move_next, i_next, j_next] = nextNode;
+
+      // Register node into nodes map
+      const nextNodeMapping = nodeMap.get([i_next, j_next].join(","));
+      if (!nextNodeMapping || nextNodeMapping[0] > totalMovesToNextNode) {
+        nodeMap.set([i_next, j_next].join(","), [
+          totalMovesToNextNode,
+          move_next,
+          i_exploring,
+          j_exploring,
+        ]);
+      }
+
+      // Add unexplored nodes to the list of nodes to be explored
+      if (!exploredNodes.has([i_next, j_next].join(","))) {
+        nodesToExplore.push([i_next, j_next]);
+      }
+    });
+  }
+
+  console.log("Impossible");
+};
 
 /**
- * 
- * @param {number} n 
- * @param {number} i 
- * @param {number} j 
+ *
+ * @param {number} n
+ * @param {number} i
+ * @param {number} j
  * @returns [move, i, j]
  */
 const getPossibleNodes = (n, i, j) => {
-    const nodes = []
+  const nodes = [];
 
-    // UpperLeft
-    if (i-2 >= 0 && j-1 >= 0)
-        nodes.push(["UL", i-2, j-1])
-    // UpperRight
-    if (i-2 >= 0 && j+1 <= n-1)
-        nodes.push(["UR", i-2, j+1])
-    // Right
-    if (j+2 <= n-1)
-        nodes.push(["R", i, j+2])
-    // LowerRight
-    if (i+2 <= n-1 && j+1 <= n-1)
-        nodes.push(["LR", i+2, j+1])
-    // LowerLeft
-    if (i+2 <= n-1 && j-1 >= 0)
-        nodes.push(["LL", i+2, j-1])
-    // Left
-    if (j-2 >= 0)
-        nodes.push(["L", i, j-2])
+  // UpperLeft
+  if (i - 2 >= 0 && j - 1 >= 0) nodes.push(["UL", i - 2, j - 1]);
+  // UpperRight
+  if (i - 2 >= 0 && j + 1 <= n - 1) nodes.push(["UR", i - 2, j + 1]);
+  // Right
+  if (j + 2 <= n - 1) nodes.push(["R", i, j + 2]);
+  // LowerRight
+  if (i + 2 <= n - 1 && j + 1 <= n - 1) nodes.push(["LR", i + 2, j + 1]);
+  // LowerLeft
+  if (i + 2 <= n - 1 && j - 1 >= 0) nodes.push(["LL", i + 2, j - 1]);
+  // Left
+  if (j - 2 >= 0) nodes.push(["L", i, j - 2]);
 
-    return nodes
-}
+  return nodes;
+};
 
-
-
-
-module.exports = printShortestPath
+module.exports = printShortestPath;

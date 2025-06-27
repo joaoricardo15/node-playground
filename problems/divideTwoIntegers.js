@@ -1,4 +1,3 @@
-
 /**
  * Given two integers dividend and divisor, divide two integers without using multiplication, division, and mod operator.
  * The integer division should truncate toward zero, which means losing its fractional part.
@@ -14,97 +13,104 @@
  * @param {number} divisor
  * @return {number}
  */
-var divideTwoIntegers = function(dividend, divisor) {
-    // Making both multiplier and divisor positive
-    let negativeResult = false
-    if (dividend < 0 && divisor > 0) {
-        dividend = -dividend
-        negativeResult = true
-    } else if (dividend > 0 && divisor < 0) {
-        divisor = -divisor
-        negativeResult = true
-    } else if (dividend < 0 && divisor < 0) {
-        dividend = -dividend
-        divisor = -divisor
+var divideTwoIntegers = function (dividend, divisor) {
+  // Making both multiplier and divisor positive
+  let negativeResult = false;
+  if (dividend < 0 && divisor > 0) {
+    dividend = -dividend;
+    negativeResult = true;
+  } else if (dividend > 0 && divisor < 0) {
+    divisor = -divisor;
+    negativeResult = true;
+  } else if (dividend < 0 && divisor < 0) {
+    dividend = -dividend;
+    divisor = -divisor;
+  }
+
+  const dividePositiveIntegers = (dividend, divisor) => {
+    // Edge cases
+    if (dividend < divisor) {
+      return 0;
+    }
+    if (dividend === divisor) {
+      return 1;
+    }
+    if (divisor === 1) {
+      return dividend;
     }
 
-    const dividePositiveIntegers = (dividend, divisor) => {
-        // Edge cases
-        if (dividend < divisor) {
-            return 0
-        }
-        if (dividend === divisor) {
-            return 1
-        }
-        if (divisor === 1) {
-            return dividend
-        }
+    const multiply = (a, b) => {
+      if (
+        a.toString().length + b.toString().length >
+        dividend.toString().length + 1
+      ) {
+        return;
+      }
 
-        const multiply = (a, b) => {
-            if ((a).toString().length + (b).toString().length > (dividend).toString().length + 1) {
-                return
-            }
+      let sum = 0;
+      for (let i = 0; i < b; i++) {
+        sum += a;
+      }
 
-            let sum = 0
-            for (let i = 0; i < b; i++) {
-                sum += a
-            }
+      return sum;
+    };
 
-            return sum
-        }
+    // Binary search
+    let low = 1,
+      high = dividend;
+    while (low < high) {
+      console.log(low, high, "---------");
+      const mid = low + ((high - low) >> 3);
+      console.log("mid:", mid);
 
-        // Binary search
-        let low = 1, high = dividend
-        while (low < high) {
-            console.log(low, high, '---------')
-            const mid = low + ((high - low) >> 3)
-            console.log('mid:', mid)
-            
-            // Result will overflow
-            if ((mid).toString().length + (divisor).toString().length > (dividend).toString().length + 1) {
-                high = mid
-                continue
-            }
-            
-            const result = multiply(mid, divisor)
-            console.log('result:', result)
-            
-            if (result === null) {
-                high = mid
-                continue
-            }
-            
-            if (dividend > result && (result + divisor) > dividend) {
-                return mid
-            }
-            
-            if (dividend > result) {
-                low = mid + 1
-            } else {
-                high = mid
-            }
-        }
+      // Result will overflow
+      if (
+        mid.toString().length + divisor.toString().length >
+        dividend.toString().length + 1
+      ) {
+        high = mid;
+        continue;
+      }
 
-        return low
+      const result = multiply(mid, divisor);
+      console.log("result:", result);
+
+      if (result === null) {
+        high = mid;
+        continue;
+      }
+
+      if (dividend > result && result + divisor > dividend) {
+        return mid;
+      }
+
+      if (dividend > result) {
+        low = mid + 1;
+      } else {
+        high = mid;
+      }
     }
 
-    const positiveDivision = dividePositiveIntegers(dividend, divisor)
+    return low;
+  };
 
-    const negativeBound = 2147483648
+  const positiveDivision = dividePositiveIntegers(dividend, divisor);
 
-    if (negativeResult) {
-        if (positiveDivision > negativeBound) {
-            return -negativeBound
-        }
+  const negativeBound = 2147483648;
 
-        return -positiveDivision
-    } else {
-        if (positiveDivision > negativeBound - 1) {
-            return negativeBound - 1
-        }
-
-        return positiveDivision
+  if (negativeResult) {
+    if (positiveDivision > negativeBound) {
+      return -negativeBound;
     }
+
+    return -positiveDivision;
+  } else {
+    if (positiveDivision > negativeBound - 1) {
+      return negativeBound - 1;
+    }
+
+    return positiveDivision;
+  }
 };
 
-module.exports = divideTwoIntegers
+module.exports = divideTwoIntegers;
