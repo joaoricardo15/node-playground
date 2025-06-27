@@ -50,14 +50,7 @@ const mergeSortedLinkedLists = (head1, head2) => {
   return mergedHead;
 };
 
-const getLinkedListFromArray = (array) => {
-  return array
-    .reverse()
-    .reduce((prev, curr) => new ListNode(curr, prev), undefined);
-};
-
 module.exports = {
   ListNode,
-  mergeSortedLinkedLists,
-  getLinkedListFromArray,
+  mergeSortedLinkedLists
 };

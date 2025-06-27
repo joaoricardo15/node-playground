@@ -8,13 +8,13 @@ function ListNode(val, next) {
  * @return {boolean}
  */
 var hasCycle = function (head) {
-  let curr = head,
-    subList = new Set();
+  let curr = head;
+  const visited = new Set();
   while (curr) {
-    if (subList.has(curr.val)) {
+    if (visited.has(curr.val)) {
       return true;
     }
-    subList.add(curr.val);
+    visited.add(curr.val);
     curr = curr.next;
   }
 
