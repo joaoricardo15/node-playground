@@ -1,8 +1,11 @@
 const {
   ListNode,
-  getLinkedListFromArray,
   mergeSortedLinkedLists,
 } = require("../mergeTwoSortedLinkedLists");
+
+const getLinkedListFromArray = (array) => {
+    return array.reverse().reduce((prev, curr) => new ListNode(curr, prev), undefined)
+}
 
 describe("getLinkedListFromArray", () => {
   const maxLenght = 10;
@@ -23,21 +26,21 @@ describe("getLinkedListFromArray", () => {
 });
 
 describe("mergeSortedLists", () => {
-  const maxLenght = 3;
+  const maxLenght = 10;
   const maxValue = 10;
 
   const randomLenght1 = Math.floor(Math.random() * maxLenght);
   const randomList1 = Array(randomLenght1)
     .fill()
     .map(() => Math.round(Math.random() * maxValue))
-    .sort();
+    .sort((a, b) => a-b);
   const randomLinkedList1 = getLinkedListFromArray(randomList1);
 
   const randomLenght2 = Math.floor(Math.random() * maxLenght);
   const randomList2 = Array(randomLenght2)
     .fill()
     .map(() => Math.round(Math.random() * maxValue))
-    .sort();
+    .sort((a, b) => a-b);
   const randomLinkedList2 = getLinkedListFromArray(randomList2);
 
   const mergedArray = randomList1.concat(randomList2).sort((a, b) => a - b);
