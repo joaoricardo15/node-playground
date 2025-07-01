@@ -6,7 +6,7 @@
  * @param {number} n
  * @return {string[]}
  */
-var generateParenthesis = function (n) {
+const generateParenthesis = (n) => {
   const combinations = [];
 
   const addElement = (substring, open, close) => {

@@ -13,7 +13,7 @@
  * @param {number} divisor
  * @return {number}
  */
-var divideTwoIntegers = function (dividend, divisor) {
+const divideTwoIntegers = (dividend, divisor) => {
   // Making both multiplier and divisor positive
   let negativeResult = false;
   if (dividend < 0 && divisor > 0) {

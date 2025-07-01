@@ -1,18 +1,15 @@
+const { ListNode } = require('./utils')
+
 /**
  * Given the head of a linked list,
  * return the head of the reserved linked list.
  */
 
-function ListNode(val, next) {
-  this.val = val;
-  this.next = next || null;
-}
-
 /**
  * @param {ListNode} head
  * @return {ListNode}
  */
-function reverseLinkedList(head) {
+const reverseLinkedList = (head) => {
   // Write your code here
 
   const nodes = [];

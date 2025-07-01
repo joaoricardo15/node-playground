@@ -1,3 +1,5 @@
+const { GraphNode } = require('./utils')
+
 /**
  * Given a three, return the elements around it in anticlockwise order.
  * Elements around it are the nodes at the left and right of the three in each layer.
@@ -32,11 +34,6 @@
  *
  * Answer: [5, 13, 2, 4, 3, 9, 12, 14, 8]
  * */
-
-function GraphNode(val, children) {
-  this.val = val;
-  this.children = children || [];
-}
 
 /**
  * @param {ListNode} head

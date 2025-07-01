@@ -10,7 +10,7 @@
  * @param {string} digits
  * @return {string[]}
  */
-var letterCombinations = function (digits) {
+const letterCombinations = (digits) => {
   // If no digits
   if (!digits) {
     return [];

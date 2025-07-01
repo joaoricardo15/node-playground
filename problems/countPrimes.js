@@ -2,7 +2,7 @@
  * @param {number} n
  * @return {number}
  */
-var countPrimes = function (n) {
+const countPrimes = (n) => {
   // Implementing the Sieve of Eratosthenes
   const isPrime = new Array(n).fill(true);
   isPrime[0] = false;

@@ -15,13 +15,13 @@
  * @param {number} k
  */
 
-function getHotelReviewScores(
+const getHotelReviewScores = (
   positiveKeyWords,
   negativeKeyWords,
   hotelIds,
   reviews,
   k,
-) {
+) => {
   // Create set of unique keyWords (for better performance)
   positiveKeyWords = new Set(positiveKeyWords.toLowerCase().split(" "));
   negativeKeyWords = new Set(negativeKeyWords.toLowerCase().split(" "));

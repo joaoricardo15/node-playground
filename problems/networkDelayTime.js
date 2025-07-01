@@ -4,7 +4,7 @@
  * @param {number} k
  * @return {number}
  */
-var networkDelayTime = function (times, n, k) {
+const networkDelayTime = (times, n, k) => {
   // Dijkstra's algorithm
   const visited = new Set();
   const unvisited = Array.from({ length: n }, (_, i) => i + 1);

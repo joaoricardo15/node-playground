@@ -1,13 +1,10 @@
-function ListNode(val, next) {
-  this.val = val;
-  this.next = next || null;
-}
+const { ListNode } = require('./utils')
 
 /**
  * @param {ListNode} head
  * @return {boolean}
  */
-var hasCycle = function (head) {
+const hasCycle = (head) => {
   let curr = head;
   const visited = new Set();
   while (curr) {

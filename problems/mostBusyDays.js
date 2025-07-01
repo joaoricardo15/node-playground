@@ -11,7 +11,7 @@
  * @param {Array} reservations - {startDate, endDate}
  * @returns {Array} - An array of hotelIds with more reservations than average of 7 last days
  */
-function getMostBusyDates(reservations) {
+const getMostBusyDates = (reservations) => {
   // Extract the earliest and latest dates from all reservations
   const earliestDate = Math.min(...reservations.map((x) => x.startDate));
   const latestDate = Math.max(...reservations.map((x) => x.endDate));

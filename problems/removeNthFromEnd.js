@@ -1,19 +1,16 @@
+const { ListNode } = require('./utils')
+
 /**
  * Given the head of a linked list,
  * remove the nth node from the end of the list and return its head.
  */
-
-function ListNode(val, next) {
-  this.val = val;
-  this.next = next || null;
-}
 
 /**
  * @param {ListNode} head
  * @param {number} n
  * @return {ListNode}
  */
-var removeNthFromEnd = function (head, n) {
+const removeNthFromEnd = (head, n) => {
   // Edge case 1
   // If the list has only one node
   if (n === 1 && head.next === null) {

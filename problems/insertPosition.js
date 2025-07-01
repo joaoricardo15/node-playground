@@ -11,7 +11,7 @@
  * @param {number} target
  * @return {number}
  */
-var insertPosition = function (nums, target) {
+const insertPosition = (nums, target) => {
   let low = 0,
     high = nums.length;
   while (low < high) {

@@ -1,29 +1,5 @@
-const {
-  ListNode,
-  mergeSortedLinkedLists,
-} = require("../mergeTwoSortedLinkedLists");
-
-const getLinkedListFromArray = (array) => {
-    return array.reverse().reduce((prev, curr) => new ListNode(curr, prev), undefined)
-}
-
-describe("getLinkedListFromArray", () => {
-  const maxLenght = 10;
-  const randomNumber1 = Math.floor(Math.random() * maxLenght);
-  const randomNumber2 = Math.floor(Math.random() * maxLenght);
-
-  test("should return single node when input is an single value array", () => {
-    expect(getLinkedListFromArray([randomNumber1])).toEqual(
-      new ListNode(randomNumber1),
-    );
-  });
-
-  test("should return linked node list when input is a multiple values array", () => {
-    expect(getLinkedListFromArray([randomNumber1, randomNumber2])).toEqual(
-      new ListNode(randomNumber1, new ListNode(randomNumber2)),
-    );
-  });
-});
+const { getLinkedListFromArray } = require('../utils')
+const { mergeSortedLinkedLists } = require("../mergeTwoSortedLinkedLists");
 
 describe("mergeSortedLists", () => {
   const maxLenght = 10;
