@@ -47,7 +47,4 @@ const mergeSortedLinkedLists = (head1, head2) => {
   return mergedHead
 }
 
-module.exports = {
-  ListNode,
-  mergeSortedLinkedLists,
-}
+module.exports = mergeSortedLinkedLists

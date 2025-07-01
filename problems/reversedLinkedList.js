@@ -34,7 +34,4 @@ const reverseLinkedList = (head) => {
   return nodes[0]
 }
 
-module.exports = {
-  ListNode,
-  reverseLinkedList,
-}
+module.exports = reverseLinkedList

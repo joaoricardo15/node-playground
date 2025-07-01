@@ -59,6 +59,4 @@ const getMostBusyDates = (reservations) => {
   return mostBusyDates
 }
 
-module.exports = {
-  mostBusyDays: getMostBusyDates,
-}
+module.exports = getMostBusyDates

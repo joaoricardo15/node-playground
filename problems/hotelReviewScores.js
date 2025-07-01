@@ -73,6 +73,4 @@ const getHotelReviewScores = (
   return sortedScores.slice(0, k)
 }
 
-module.exports = {
-  getHotelReviewScores,
-}
+module.exports = getHotelReviewScores

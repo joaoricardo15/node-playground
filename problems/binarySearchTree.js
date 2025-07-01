@@ -35,6 +35,4 @@ const isValidBST = (root) => {
   return checkBST(root, -Infinity, Infinity)
 }
 
-module.exports = {
-  isValidBST,
-}
+module.exports = isValidBST

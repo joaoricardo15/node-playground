@@ -1,5 +1,3 @@
-const { GraphNode } = require('./utils')
-
 /**
  * Given a three, return the elements around it in anticlockwise order.
  * Elements around it are the nodes at the left and right of the three in each layer.
@@ -79,7 +77,4 @@ const elementsAroundThree = (head) => {
   return elementsAround
 }
 
-module.exports = {
-  GraphNode,
-  elementsAroundThree,
-}
+module.exports = elementsAroundThree

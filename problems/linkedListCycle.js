@@ -18,7 +18,4 @@ const hasCycle = (head) => {
   return false
 }
 
-module.exports = {
-  ListNode,
-  hasCycle,
-}
+module.exports = hasCycle

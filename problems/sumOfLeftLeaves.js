@@ -3,12 +3,6 @@
  * A leaf is a node with no children. A left leaf is a leaf that is the left child of another node.
  */
 
-const TreeNode = (val, left, right) => {
-  this.val = val === undefined ? 0 : val
-  this.left = left === undefined ? null : left
-  this.right = right === undefined ? null : right
-}
-
 /**
  * @param {TreeNode} root
  * @return {number}
@@ -36,7 +30,4 @@ const sumOfLeftLeaves = (root) => {
   return sum
 }
 
-module.exports = {
-  sumOfLeftLeaves,
-  TreeNode,
-}
+module.exports = sumOfLeftLeaves

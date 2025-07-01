@@ -1,18 +1,4 @@
-/**
- *
- * @param {number} val
- */
-
-class QuadThree {
-  constructor(val, isLeaf, tl, tr, bl, br) {
-    this.val = val
-    this.isLeaf = isLeaf
-    this.tl = tl
-    this.tr = tr
-    this.bl = bl
-    this.br = br
-  }
-}
+const { QuadThree } = require('./utils')
 
 /**
  *
@@ -41,7 +27,4 @@ const buildQuadThree = (input) => {
   )
 }
 
-module.exports = {
-  QuadThree,
-  buildQuadThree,
-}
+module.exports = buildQuadThree

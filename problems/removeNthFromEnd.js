@@ -49,7 +49,4 @@ const removeNthFromEnd = (head, n) => {
   return head
 }
 
-module.exports = {
-  ListNode,
-  removeNthFromEnd,
-}
+module.exports = removeNthFromEnd
