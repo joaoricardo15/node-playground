@@ -1,4 +1,4 @@
-const { mostBusyDays } = require('../mostBusyDays')
+const getMostBusyDates = require('../mostBusyDays')
 
 describe('sum', () => {
   test('should return the correct amount of busy days', () => {
@@ -17,6 +17,6 @@ describe('sum', () => {
       },
     ]
 
-    expect(mostBusyDays(inputs)).toStrictEqual([9, 10])
+    expect(getMostBusyDates(inputs)).toStrictEqual([9, 10])
   })
 })

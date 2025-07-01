@@ -1,4 +1,5 @@
-const { hasCycle, ListNode } = require('../linkedListCycle')
+const { ListNode } = require('../utils')
+const hasCycle = require('../linkedListCycle')
 
 describe('hasCycle', () => {
   const maxLenght = 1000

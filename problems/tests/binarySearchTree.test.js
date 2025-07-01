@@ -1,5 +1,5 @@
 const { TreeNode } = require('../utils')
-const { isValidBST } = require('../binarySearchTree')
+const isValidBST = require('../binarySearchTree')
 
 describe('isValidBST', () => {
   test('Example 0: Should return true for an empty tree', () => {

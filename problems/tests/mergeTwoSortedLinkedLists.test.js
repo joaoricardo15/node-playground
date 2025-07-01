@@ -1,5 +1,5 @@
 const { getLinkedListFromArray } = require('../utils')
-const { mergeSortedLinkedLists } = require('../mergeTwoSortedLinkedLists')
+const mergeSortedLinkedLists = require('../mergeTwoSortedLinkedLists')
 
 describe('mergeSortedLists', () => {
   const maxLenght = 10

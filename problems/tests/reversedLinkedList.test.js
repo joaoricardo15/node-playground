@@ -1,4 +1,5 @@
-const { reverseLinkedList, ListNode } = require('../reversedLinkedList')
+const { ListNode } = require('../utils')
+const reverseLinkedList = require('../reversedLinkedList')
 
 describe('reverseLinkedList', () => {
   test('should return undefined for invalid input', () => {

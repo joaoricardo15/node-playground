@@ -1,4 +1,5 @@
-const { removeNthFromEnd, ListNode } = require('../removeNthFromEnd')
+const { ListNode } = require('../utils')
+const removeNthFromEnd = require('../removeNthFromEnd')
 
 describe('hasCycle', () => {
   const maxLenght = 1000

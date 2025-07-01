@@ -1,4 +1,5 @@
-const { GraphNode, elementsAroundThree } = require('../elementsAroundThree')
+const { GraphNode } = require('../utils') 
+const elementsAroundThree = require('../elementsAroundThree')
 
 describe('elementsAroundThree', () => {
   test('should return correct elements around three regarding visual example 1', () => {

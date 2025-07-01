@@ -1,4 +1,4 @@
-const { getHotelReviewScores } = require('../hotelReviewScores')
+const getHotelReviewScores = require('../hotelReviewScores')
 
 describe('getHotelReviewScores', () => {
   test('should return the ranked array of hotelIds', () => {
