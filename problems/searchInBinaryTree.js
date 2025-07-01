@@ -12,6 +12,8 @@ const { TreeNode } = require("./utils")
  */
 const searchBST = (root, val) => {
     let currentNode = root
+    
+    // Complexity O(Log N)
     while(currentNode) {
         if (val > currentNode.val) {
             currentNode = currentNode.right
