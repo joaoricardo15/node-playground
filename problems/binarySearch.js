@@ -8,7 +8,7 @@ const search = (arr, target) => {
     high = arr.length - 1,
     mid
   while (high >= low) {
-    mid = low + Math.floor((high - low) / 2)
+    mid = low + ((high - low) >> 1)
     if (arr[mid] > target) {
       high = mid - 1
     } else if (arr[mid] < target) {
