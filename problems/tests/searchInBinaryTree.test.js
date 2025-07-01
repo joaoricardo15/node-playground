@@ -1,5 +1,5 @@
-const { TreeNode } = require('./utils')
-const searchBST = require('./searchInBinaryTree')
+const { TreeNode } = require('../utils')
+const searchBST = require('../searchInBinaryTree')
 
 describe('searchBST', () => {
   test('Example 0: Should return null for value not found', () => {
