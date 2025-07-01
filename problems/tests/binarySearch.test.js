@@ -1,4 +1,4 @@
-const search = require('./binarySearch')
+const search = require('../binarySearch')
 
 describe('search', () => {
   test('Example 1: Should return the right index', () => {
