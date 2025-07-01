@@ -27,19 +27,19 @@ Note: Using any built-in memoization libraries.
 */
 
 const memoize = (fn) => {
-  const inputHistory = {};
+  const inputHistory = {}
 
   return (...input) => {
     if (inputHistory[input]) {
-      return inputHistory[input];
+      return inputHistory[input]
     }
 
-    const result = fn(...input);
+    const result = fn(...input)
 
-    inputHistory[input] = result;
+    inputHistory[input] = result
 
-    return result;
-  };
-};
+    return result
+  }
+}
 
-module.exports = memoize;
+module.exports = memoize

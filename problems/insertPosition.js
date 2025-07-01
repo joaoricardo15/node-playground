@@ -13,18 +13,18 @@
  */
 const insertPosition = (nums, target) => {
   let low = 0,
-    high = nums.length;
+    high = nums.length
   while (low < high) {
-    const middle = low + ((high - low) >> 1);
+    const middle = low + ((high - low) >> 1)
 
     if (target > nums[middle]) {
-      low = middle + 1;
+      low = middle + 1
     } else {
-      high = middle;
+      high = middle
     }
   }
 
-  return low;
-};
+  return low
+}
 
-module.exports = insertPosition;
+module.exports = insertPosition

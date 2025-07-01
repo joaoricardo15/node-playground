@@ -11,10 +11,10 @@
  *    should be rounded to -2ˆ31, and integers greater than 2ˆ31 - 1 should be rounded to 2ˆ31 - 1.
  */
 
-const MIN_RANGE = -2147483648;
-const MAX_RANGE = 2147483647;
-const LEADING_CHARS = ["-", "+"];
-const NUMERIC_CHARS = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+const MIN_RANGE = -2147483648
+const MAX_RANGE = 2147483647
+const LEADING_CHARS = ['-', '+']
+const NUMERIC_CHARS = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
 /**
  *
@@ -22,8 +22,8 @@ const NUMERIC_CHARS = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
  * @returns {number}
  */
 const stringToInteger = (s) => {
-  if (typeof s !== "string") {
-    return;
+  if (typeof s !== 'string') {
+    return
   }
 
   // Handling empty spaces
@@ -32,30 +32,30 @@ const stringToInteger = (s) => {
   // Handling non-digit character
   // s = s.replace(/[^0-9.,-]/g, ' ')
 
-  let numberHasStarted = false;
+  let numberHasStarted = false
   for (let i = 0; i < s.length; i++) {
     if (!numberHasStarted) {
       if (!NUMERIC_CHARS.includes(s[i])) {
         if (!LEADING_CHARS.includes(s[i])) {
-          return 0;
+          return 0
         }
       }
 
-      numberHasStarted = true;
+      numberHasStarted = true
     }
   }
 
   // Parsing the integer (it already trims empty spaces and non-digit characterss)
-  let n = parseInt(s);
+  let n = parseInt(s)
 
   // Handling out our range
   if (n < MIN_RANGE) {
-    n = MIN_RANGE;
+    n = MIN_RANGE
   } else if (n > MAX_RANGE) {
-    n = MAX_RANGE;
+    n = MAX_RANGE
   }
 
-  return n;
-};
+  return n
+}
 
-module.exports = stringToInteger;
+module.exports = stringToInteger

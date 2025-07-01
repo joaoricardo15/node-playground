@@ -5,20 +5,20 @@ const { ListNode } = require('./utils')
  * @return {boolean}
  */
 const hasCycle = (head) => {
-  let curr = head;
-  const visited = new Set();
+  let curr = head
+  const visited = new Set()
   while (curr) {
     if (visited.has(curr.val)) {
-      return true;
+      return true
     }
-    visited.add(curr.val);
-    curr = curr.next;
+    visited.add(curr.val)
+    curr = curr.next
   }
 
-  return false;
-};
+  return false
+}
 
 module.exports = {
   ListNode,
   hasCycle,
-};
+}

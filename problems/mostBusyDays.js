@@ -13,52 +13,52 @@
  */
 const getMostBusyDates = (reservations) => {
   // Extract the earliest and latest dates from all reservations
-  const earliestDate = Math.min(...reservations.map((x) => x.startDate));
-  const latestDate = Math.max(...reservations.map((x) => x.endDate));
+  const earliestDate = Math.min(...reservations.map((x) => x.startDate))
+  const latestDate = Math.max(...reservations.map((x) => x.endDate))
 
   // Declare array and fulfill it all reservationDates (inclusive)
   const reservationDates = Array(latestDate - earliestDate + 1)
     .fill()
-    .map((_, i) => i + earliestDate);
+    .map((_, i) => i + earliestDate)
 
   // Declare an array with counters per reservation day, initiated with zeros
   const totalReservationsPerDate = reservationDates.reduce(
     (prev, curr) => ({ ...prev, [curr]: 0 }),
-    {},
-  );
+    {}
+  )
 
   // Loop through the reservations
   for (let i = 0; i < reservations.length; i++) {
-    const reservation = reservations[i];
+    const reservation = reservations[i]
 
     // Loop through the start of reservation til its end
     for (let j = reservation.startDate; j <= reservation.endDate; j++) {
       // Increment reservation date counter
-      totalReservationsPerDate[j]++;
+      totalReservationsPerDate[j]++
     }
   }
 
   // Declare empty array to add the most busy days
-  const mostBusyDates = [];
+  const mostBusyDates = []
 
   for (let i = 7; i < reservationDates.length; i++) {
-    const reservationDate = reservationDates[i];
+    const reservationDate = reservationDates[i]
 
     // Calculate reservation average of last 7 days
     const average =
       Object.values(totalReservationsPerDate)
         .slice(i - 7, i)
-        .reduce((prev, curr) => prev + curr, 0) / 7;
+        .reduce((prev, curr) => prev + curr, 0) / 7
 
     // Check whether the total amount of reservations in a specific date is higher than average of last 7 days
     if (totalReservationsPerDate[reservationDate] > average) {
-      mostBusyDates.push(reservationDates[i]);
+      mostBusyDates.push(reservationDates[i])
     }
   }
 
-  return mostBusyDates;
+  return mostBusyDates
 }
 
 module.exports = {
   mostBusyDays: getMostBusyDates,
-};
+}

@@ -4,9 +4,9 @@
  */
 
 const TreeNode = (val, left, right) => {
-  this.val = val === undefined ? 0 : val;
-  this.left = left === undefined ? null : left;
-  this.right = right === undefined ? null : right;
+  this.val = val === undefined ? 0 : val
+  this.left = left === undefined ? null : left
+  this.right = right === undefined ? null : right
 }
 
 /**
@@ -14,29 +14,29 @@ const TreeNode = (val, left, right) => {
  * @return {number}
  */
 const sumOfLeftLeaves = (root) => {
-  const queue = [root];
-  const visited = new Set();
-  let sum = 0;
+  const queue = [root]
+  const visited = new Set()
+  let sum = 0
 
   while (queue.length) {
-    const node = queue.shift();
-    visited.add(node.val);
+    const node = queue.shift()
+    visited.add(node.val)
 
     if (node.left) {
-      queue.push(node.left);
+      queue.push(node.left)
       if (!node.left.left && !node.left.right) {
-        sum += node.left.val;
+        sum += node.left.val
       }
     }
     if (node.right) {
-      queue.push(node.right);
+      queue.push(node.right)
     }
   }
 
-  return sum;
-};
+  return sum
+}
 
 module.exports = {
   sumOfLeftLeaves,
   TreeNode,
-};
+}

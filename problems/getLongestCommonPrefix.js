@@ -9,21 +9,21 @@
  * @returns {string}
  */
 const getLongestCommonPrefix = (arr) => {
-  if (!arr || typeof arr[0] !== "string") {
-    return;
+  if (!arr || typeof arr[0] !== 'string') {
+    return
   }
 
-  let prefix = arr[0];
+  let prefix = arr[0]
   for (let i = 1; i < arr.length; i++) {
-    const word = arr[i];
+    const word = arr[i]
     for (let j = prefix.length; j > 0; j--) {
       if (prefix.substring(0, j) !== word.substring(0, j)) {
-        prefix = prefix.slice(0, -1);
+        prefix = prefix.slice(0, -1)
       }
     }
   }
 
-  return prefix;
-};
+  return prefix
+}
 
-module.exports = getLongestCommonPrefix;
+module.exports = getLongestCommonPrefix

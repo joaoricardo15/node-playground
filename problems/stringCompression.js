@@ -5,30 +5,30 @@
  */
 const stringCompression = (s) => {
   if (!s) {
-    return "";
+    return ''
   }
 
   let i,
     j,
-    counter = 0;
+    counter = 0
   for (i = 0; i < s.length; ) {
     for (j = i + 1; s[i] === s[j]; j++) {
-      counter++;
+      counter++
     }
 
     if (counter === 0) {
-      i++;
+      i++
     } else {
-      s = s.slice(0, i + 1) + (counter + 1) + s.slice(j);
-      i = i + 1 + (counter + 1).toString().length;
-      counter = 0;
+      s = s.slice(0, i + 1) + (counter + 1) + s.slice(j)
+      i = i + 1 + (counter + 1).toString().length
+      counter = 0
     }
   }
 
-  return s;
-};
+  return s
+}
 
-module.exports = stringCompression;
+module.exports = stringCompression
 
 /**
  * i = 0

@@ -14,30 +14,30 @@
 const findIndexOfFirstOccurrence = (haystack, needle) => {
   // Validating input
   if (
-    typeof haystack !== "string" ||
+    typeof haystack !== 'string' ||
     !haystack.length ||
-    typeof needle !== "string" ||
+    typeof needle !== 'string' ||
     !needle.length
   ) {
-    return;
+    return
   }
 
-  const notFoundResponse = -1;
+  const notFoundResponse = -1
 
   // Edge cases
   if (needle.length > haystack.length) {
-    return notFoundResponse;
+    return notFoundResponse
   }
   if (needle.length === haystack.length) {
-    return needle === haystack ? 0 : notFoundResponse;
+    return needle === haystack ? 0 : notFoundResponse
   }
 
   for (let i = 0; i <= haystack.length - needle.length; i++) {
-    const subString = haystack.substring(i, i + needle.length);
-    if (subString === needle) return i;
+    const subString = haystack.substring(i, i + needle.length)
+    if (subString === needle) return i
   }
 
-  return notFoundResponse;
-};
+  return notFoundResponse
+}
 
-module.exports = findIndexOfFirstOccurrence;
+module.exports = findIndexOfFirstOccurrence

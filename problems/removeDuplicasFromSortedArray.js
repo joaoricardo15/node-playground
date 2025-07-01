@@ -18,16 +18,16 @@
 
 const removeDuplicatesFromSortedArray = (nums) => {
   if (!Array.isArray(nums)) {
-    return;
+    return
   }
 
-  const uniqueArray = [...new Set(nums)];
+  const uniqueArray = [...new Set(nums)]
 
   for (let i = 0; i < uniqueArray.length; i++) {
-    nums[i] = uniqueArray[i];
+    nums[i] = uniqueArray[i]
   }
 
-  return uniqueArray.length;
-};
+  return uniqueArray.length
+}
 
-module.exports = removeDuplicatesFromSortedArray;
+module.exports = removeDuplicatesFromSortedArray

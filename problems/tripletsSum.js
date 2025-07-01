@@ -11,37 +11,37 @@ Notice that the solution set must not contain duplicate triplets.
  */
 const sum = (nums) => {
   // Binary search
-  nums.sort((a, b) => a - b);
-  const triplets = [];
+  nums.sort((a, b) => a - b)
+  const triplets = []
   for (let i = 0; i < nums.length; i++) {
     if (i > 0 && nums[i] === nums[i - 1]) {
-      continue;
+      continue
     }
 
-    let j = i + 1;
-    let k = nums.length - 1;
+    let j = i + 1
+    let k = nums.length - 1
 
     while (j < k) {
-      const sum = nums[i] + nums[j] + nums[k];
+      const sum = nums[i] + nums[j] + nums[k]
       if (sum > 0) {
-        k--;
+        k--
       } else if (sum < 0) {
-        j++;
+        j++
       } else {
-        triplets.push([nums[i], nums[j], nums[k]]);
-        j++;
+        triplets.push([nums[i], nums[j], nums[k]])
+        j++
 
         while (nums[j] === nums[j - 1]) {
-          j++;
+          j++
         }
       }
     }
   }
 
-  return triplets;
-};
+  return triplets
+}
 
-module.exports = sum;
+module.exports = sum
 
 // // Brute force
 // const triplets = []

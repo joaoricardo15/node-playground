@@ -41,45 +41,45 @@ const { GraphNode } = require('./utils')
  */
 const elementsAroundThree = (head) => {
   // Declare array for the eventual output
-  const elementsAround = [head.val];
+  const elementsAround = [head.val]
 
   // Declare array to handle nodes to be explored in each layer
-  let nodesToExplore = head.children;
+  let nodesToExplore = head.children
 
   // Run until there is no more nodes to be explored
   while (nodesToExplore.length) {
     // Declare empty aray to add nodes of current layer
-    const nextNodes = [];
+    const nextNodes = []
 
     // Loop through nodes to be explored
     for (let i = 0; i < nodesToExplore.length; i++) {
       // For each node
-      const node = nodesToExplore[i];
+      const node = nodesToExplore[i]
 
       // Push its childen to be explored in the next run
-      nextNodes.push(...node.children);
+      nextNodes.push(...node.children)
 
       // If node is the extreme right node
       if (i === 0) {
         // Add it to the start of output array
-        elementsAround.unshift(node.val);
+        elementsAround.unshift(node.val)
       }
       // If node is the extreme left node
       else if (i === nodesToExplore.length - 1) {
         // Add it to the end of output array
-        elementsAround.push(node.val);
+        elementsAround.push(node.val)
       }
     }
 
     // Set the next nodes to explore as the concatenation
     // of all children from all nodes in current layer
-    nodesToExplore = nextNodes;
+    nodesToExplore = nextNodes
   }
 
-  return elementsAround;
-};
+  return elementsAround
+}
 
 module.exports = {
   GraphNode,
   elementsAroundThree,
-};
+}

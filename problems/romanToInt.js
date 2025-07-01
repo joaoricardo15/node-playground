@@ -27,7 +27,7 @@ const romanCharsMap = {
   C: 100,
   D: 500,
   M: 1000,
-};
+}
 
 /**
  * @param {string} s
@@ -36,29 +36,29 @@ const romanCharsMap = {
 const romanToInt = (s) => {
   // Implementing constrainsts
   if (
-    typeof s !== "string" ||
+    typeof s !== 'string' ||
     s.length == 0 ||
     s.length > 15 ||
-    s.split("").some((char) => !Object.keys(romanCharsMap).includes(char))
+    s.split('').some((char) => !Object.keys(romanCharsMap).includes(char))
   ) {
-    return;
+    return
   }
 
   // Proper logic
-  let count = 0;
+  let count = 0
   for (let i = 0; i < s.length; i++) {
-    const currentValue = romanCharsMap[s[i]];
-    const nextValue = romanCharsMap[s[i + 1]];
+    const currentValue = romanCharsMap[s[i]]
+    const nextValue = romanCharsMap[s[i + 1]]
 
     if (currentValue < nextValue) {
-      count += nextValue - currentValue;
-      i++;
+      count += nextValue - currentValue
+      i++
     } else {
-      count += currentValue;
+      count += currentValue
     }
   }
 
-  return count;
-};
+  return count
+}
 
-module.exports = romanToInt;
+module.exports = romanToInt

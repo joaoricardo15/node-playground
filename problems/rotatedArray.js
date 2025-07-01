@@ -5,6 +5,6 @@
  */
 const searchRotatedArray = (nums, target) => {
   return nums.indexOf(target)
-};
+}
 
-module.exports = searchRotatedArray;
+module.exports = searchRotatedArray

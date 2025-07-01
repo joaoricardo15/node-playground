@@ -6,7 +6,8 @@
   "author": "João Ricardo Cardoso",
   "license": "ISC",
   "scripts": {
-    "test": "jest --watchAll"
+    "test": "jest --watchAll",
+    "format": "prettier ./src --write '**/*.{ts,tsx,js,jsx}'"
   },
   "jest": {
     "testPathIgnorePatterns": ["problems/tests"]

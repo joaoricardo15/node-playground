@@ -14,40 +14,40 @@ const { ListNode } = require('./utils')
  */
 const mergeSortedLinkedLists = (head1, head2) => {
   // Declare a variable to be the head of the merged list
-  let mergedHead;
+  let mergedHead
   if (head1.val <= head2.val) {
-    mergedHead = head1;
-    head1 = head1.next;
+    mergedHead = head1
+    head1 = head1.next
   } else {
-    mergedHead = head2;
-    head2 = head2.next;
+    mergedHead = head2
+    head2 = head2.next
   }
 
   // Declare variable to be the current node
-  let currentNode = mergedHead;
+  let currentNode = mergedHead
 
   // Run until both lists are empty
   while (head1 && head2) {
     // Determine with node is smaller and append it to the merged list
     if (head1.val <= head2.val) {
-      currentNode.next = head1;
-      head1 = head1.next;
+      currentNode.next = head1
+      head1 = head1.next
     } else {
-      currentNode.next = head2;
-      head2 = head2.next;
+      currentNode.next = head2
+      head2 = head2.next
     }
 
-    currentNode = currentNode.next;
+    currentNode = currentNode.next
   }
 
   // Complete the merged list with the eventual remaining of the lists
-  currentNode.next = head1 || head2;
+  currentNode.next = head1 || head2
 
   // Return the merged list
-  return mergedHead;
-};
+  return mergedHead
+}
 
 module.exports = {
   ListNode,
-  mergeSortedLinkedLists
-};
+  mergeSortedLinkedLists,
+}

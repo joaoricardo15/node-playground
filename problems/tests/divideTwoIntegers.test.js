@@ -1,9 +1,9 @@
-const divideTwoIntegers = require("../divideTwoIntegers");
+const divideTwoIntegers = require('../divideTwoIntegers')
 
-describe("divideTwoIntegers", () => {
-  test("should return division of two numbers for test case 1", () => {
-    expect(divideTwoIntegers(0, 1)).toBe(0);
-  });
+describe('divideTwoIntegers', () => {
+  test('should return division of two numbers for test case 1', () => {
+    expect(divideTwoIntegers(0, 1)).toBe(0)
+  })
 
   // test('should return division of two numbers for test case 2', () => {
   //     expect(divideTwoIntegers(1, 1)).toBe(1)
@@ -68,4 +68,4 @@ describe("divideTwoIntegers", () => {
   // test('should return division of two numbers for test case 16', () => {
   //     expect(divideTwoIntegers(-1039162657, 490823224)).toBe(-2)
   // })
-});
+})
