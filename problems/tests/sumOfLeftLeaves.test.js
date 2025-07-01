@@ -1,4 +1,5 @@
-const { sumOfLeftLeaves, TreeNode } = require("../sumOfLeftLeaves");
+const { TreeNode } = require("../utils")
+const { sumOfLeftLeaves } = require("../sumOfLeftLeaves");
 
 describe("sumOfLeftLeaves", () => {
   test("Example 1: Should return 0 for a tree with only one node", () => {
