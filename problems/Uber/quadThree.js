@@ -1,4 +1,4 @@
-const { QuadThree } = require('./utils')
+const { QuadThree } = require('../utils')
 
 /**
  *
