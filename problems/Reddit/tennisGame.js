@@ -18,60 +18,8 @@
  */
 
 class TennisMatch {
-    constructor() {
-        this.players = { player1: 0, player2: 0 };
-        this.games = [{ player1: 0, player2: 0 }];
-        this.currentGame = { player1: 0, player2: 0 };
-    }
-
-    scorePoint(player) {
-        if (!this.players.hasOwnProperty(player)) {
-            throw new Error("Invalid player");
-        }
-
-        const opponent = player === 'player1' ? 'player2' : 'player1';
-        this.currentGame[player]++;
-
-        if (this.currentGame[player] >= 4 && this.currentGame[opponent] < 3) {
-            this.games[player]++;
-            this.resetCurrentGame();
-        } else if (this.currentGame[player] === 3 && this.currentGame[opponent] === 3) {
-            this.currentGame[player] = 3; // Deuce
-            this.currentGame[opponent] = 3;
-        } else if (this.currentGame[player] === 4 && this.currentGame[opponent] === 3) {
-            // Advantage
-            this.currentGame[player] = 5; // Player wins the game
-        } else if (this.currentGame[opponent] === 4 && this.currentGame[player] === 3) {
-            // Opponent has advantage, reset to deuce
-            this.resetCurrentGame();
-        }
-    }
-
-    getScore() {
-        if (this.getWinner()) {
-            throw new Error("Match is over");
-        }
-        
-        const scoreMap = { 0: "0", 1: "15", 2: "30", 3: "40", 4: "Advantage" };
-        const player1Score = scoreMap[this.currentGame.player1];
-        const player2Score = scoreMap[this.currentGame.player2];
-
-        return `${player1Score} - ${player2Score}`;
-    }
-
-    getWinner() {
-        if (this.games.player1 >= 3) return 'player1';
-        if (this.games.player2 >= 3) return 'player2';
-        return null;
-    }
-
-    resetCurrentGame() {
-        this.currentGame.player1 = 0;
-        this.currentGame.player2 = 0;
-    }
+    // TODO
 }
 
-// Tests cases to validate all rules:
-const match = new TennisMatch();
-
+module.exports = TennisMatch
 
