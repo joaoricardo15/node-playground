@@ -4,11 +4,11 @@
  * Reconstruct and return the queue that is represented by the input array people.
  * The returned queue should be formatted as an array queue, where queue[j] = [hj, kj]
  * is the attributes of the jth person in the queue (queue[0] is the person at the front of the queue).
- * 
+ *
  * Example:
  * Input: people = [[7,0],[4,4],[7,1],[5,0],[6,1],[5,2]
  * Output: [[5,0],[7,0],[5,2],[6,1],[4,4],[7,1]]
- * 
+ *
  * Explanation:
  * Person 0 has height 5 with no other people taller or the same height in front
  * Person 1 has height 7 with no other people taller or the same height in front.
@@ -17,7 +17,7 @@
  * Person 4 has height 4 with four people taller or the same height in front, which are people 0, 1, 2, and 3.
  * Person 5 has height 7 with one person taller or the same height in front, which is person 1.
  * Hence [[5,0],[7,0],[5,2],[6,1],[4,4],[7,1]] is the reconstructed queue.
- * 
+ *
  * Constraints:
  * 1 <= people.length <= 2000
  * 0 <= hi <= 106
@@ -30,12 +30,12 @@
  * @return {number[][]}
  */
 const reconstructQueue = (people) => {
-    people.sort((a, b) => b[0] - a[0] || a[1] - b[1]);
-    const queue = [];
-    for (let p of people) {
-        queue.splice(p[1], 0, p)
-    }
-    return queue;
+  people.sort((a, b) => b[0] - a[0] || a[1] - b[1])
+  const queue = []
+  for (let p of people) {
+    queue.splice(p[1], 0, p)
+  }
+  return queue
 }
 
 module.exports = reconstructQueue
