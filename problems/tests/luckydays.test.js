@@ -8,7 +8,6 @@ describe('sum', () => {
     expect(findPrimeDates(d1, d2)).toBe(luckyDates)
   })
 
-
   test('Example 2: should not return the right amount of lucky dates', () => {
     const d1 = '25-06-2365'
     const d2 = '07-09-8847'

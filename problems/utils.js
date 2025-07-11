@@ -43,7 +43,7 @@ const isPalindrome = (s) => {
 }
 
 /**
- * @param {number[]} array 
+ * @param {number[]} array
  * @returns ListNode
  */
 const getLinkedListFromArray = (array) => {
